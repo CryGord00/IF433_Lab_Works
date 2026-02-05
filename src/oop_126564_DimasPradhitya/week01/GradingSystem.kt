@@ -1,9 +1,10 @@
 package oop_126564_DimasPradhitya.week01
 
 fun main() {
-    var name: string = "Dimas Pradhitya"
-    var score: Int = 95
+    //REFACTOR: Gunakan val dan hapus tipe data eksplisit
+    val name = string = "Dimas Pradhitya"
+    val score = 95
 
-    // Concatennation gaya lama
-    println("Nama: " + name + ", Nilai:"+ score)
+    // REFACTOR: String Template ($name)
+    println("Nama: $name, Nilai: $score")
 }
