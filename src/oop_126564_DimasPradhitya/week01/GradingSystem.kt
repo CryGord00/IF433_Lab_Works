@@ -15,3 +15,7 @@ fun main() {
     // REFACTOR: String Template ($name)
     println("Nama: $name, Nilai: $score")
 }
+//Diluar main()
+fun calculateStatus(score: Int) = if (score > 75) "Luslus" else "Tidak Lulus"
+//pangil Di Dalam main()
+println("Status; ${calculateStatus(score)}")
