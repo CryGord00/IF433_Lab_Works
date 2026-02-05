@@ -11,11 +11,22 @@ fun main() {
         in 70..79 -> "C"
         else -> "D"
     }
-     println("Grade kamu: $grade")
+    //Tambah di akhir main()
+    val studentId: String? = null
+
+//Jika null, gunakan nulai deafult 0
+    val idLength = stundetId?, length ?: 0
+
+    println("Panjang ID: $idLength")
+
+    println("Grade kamu: $grade")
     // REFACTOR: String Template ($name)
     println("Nama: $name, Nilai: $score")
+    //pangil Di Dalam main()
+    println("Status; ${calculateStatus(score)}"
 }
+
 //Diluar main()
 fun calculateStatus(score: Int) = if (score > 75) "Luslus" else "Tidak Lulus"
-//pangil Di Dalam main()
-println("Status; ${calculateStatus(score)}")
+
+
