@@ -7,6 +7,10 @@ fun main() {
     val finalPrice = calculateDiscount(price)
     printReceipt(title = gameTitle, finalPrice = finalPrice)
 
+    val userNote: String? = null
+
+    printReceipt(title = gameTitle, finalPrice = finalPrice, note = userNote)
+
 }
 
 fun calculationDiscount(price: int): Int = if (price > 550000) {
@@ -19,4 +23,11 @@ fun printReceipt(title: String, finalPrice: Int) {
     println("--- Struk Pembelian Game ---")
     println("Judul Game  : $title")
     println("Harga Akhir : Rp $finalPrice")
+}
+
+fun printReceipt(title: String, finalPrice: Int, note: String?) {
+    println("--- Struk Pembelian Game ---")
+    println("Judul Game  : $title")
+    println("Harga Akhir : Rp $finalPrice")
+    println("Catatan     : ${note ?: "Tidak ada catatan"}")
 }
