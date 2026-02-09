@@ -2,17 +2,17 @@ package oop_126564_DimasPradhitya.week01
 
 fun main(args: Array<String>){
     //Variabel definition
-    var radius: Double = 7.0
-    var pi: Double = 3.14
+    val radius = 7.0
+    val pi = 3.14
 
     //Caculation
-    var area: Double = pi * radius * radius
+    val area = pi * radius * radius
 
     //Output Concentation
-    println("Radius: " + radius + ", Area: "+ area)
+    println("Radius:  $radius, Area: $area)
 
     //Logic check
-    checkSize(area)
+    println(checkSize(area))
 }
 
 fun ChechkSize(area: Double) {
