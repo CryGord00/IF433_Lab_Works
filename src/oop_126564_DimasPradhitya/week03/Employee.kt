@@ -26,5 +26,21 @@ class Employee(val name: String) {
 // Kecuali kita buat function khusus utnuk print.
     fun printStatus() {
         println("Karyawan: $name, Rating: $performanceRating")
+
+        fun main() {
+            val e = Employee("Budi")
+
+            //1. Test Validasi Salary
+            e.salary = -100 // Harusnya print Erorr
+            e.salary = 500000
+            println("Gaji: ${e.salary}")
+
+            // 2. Test Encapsulation
+            e.increasePerformace()
+            // e.performanceRating = 5 // Coba iuncoment, pasti
+
+            // 3. Test Computed Property
+            println("Pajak yang harus dibayar: ${e.tax}")
+        }
     }
 }
