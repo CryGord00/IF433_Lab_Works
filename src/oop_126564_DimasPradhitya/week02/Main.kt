@@ -1,4 +1,4 @@
-package oop_126564_DimasPradhitya.week02
+apackage oop_126564_DimasPradhitya.week02
 
 import java.util.Scanner
 
