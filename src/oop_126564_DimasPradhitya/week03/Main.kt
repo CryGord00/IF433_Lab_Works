@@ -26,3 +26,20 @@ fun main() {
     player1.addXp(60)
 }
 }
+fun main() {
+    // --- TESTING TUGAS 1: WEAPON ---
+    println("=== TESTING WEAPON ===")
+    val mySword = Weapon("Excalibur")
+    mySword.damage = 9999 // Akan dipaksa ke 1000
+    println("Senjata: ${mySword.name} | Damage: ${mySword.damage} | Tier: ${mySword.tier}")
+
+    println("\n=== TESTING PLAYER ===")
+    val hero = Player("Dimas_Pro")
+
+    // Tes penambahan XP sesuai instruksi modul
+    hero.addXp(50)  // Total XP: 50, Level: 1
+    hero.printStatus()
+
+    hero.addXp(60)  // Total XP: 110, Level: 2 (Level Up!)
+    hero.printStatus()
+}
