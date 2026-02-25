@@ -3,7 +3,7 @@ package oop_126564_DimasPradhitya.week04
 open class Employee(val nama: String, val baseSalary: Int) {
 
     open fun work() {
-        println("$name sedang bekerja. ");
+        println("$nama sedang bekerja. ");
     }
 
     open fun calculateBonus(): Int {

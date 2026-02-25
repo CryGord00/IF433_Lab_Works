@@ -17,4 +17,17 @@ fun main() {
     myEv.openTrunk() // Memanggil method dari class car
     myEv.honk() // Memanggil method dari class Vehicle
     myEv.accelerate() // memanggil method final dari ElectricCar
+
+    println("\n---- Testing Employee Hierarchy ---")
+
+    // Instansiasi objek Manager dan Developer
+    val manager = Manager("Andika", 8000000);
+    val developer = Developer ("Revand", 5500000, "Javascript" );
+
+    // Memanggil fungsi Work() dan cetak hasil CalculateBonus
+    manager.work()
+    println("Bonus Manger: Rp ${manager.calculateBonus()}");
+
+    developer.work()
+    println("Bonus Developer: Rp ${developer.calculateBonus()}");
 }
