@@ -1,7 +1,7 @@
 package oop_126564_DimasPradhitya.week04
 
 // Gunakan Keyword 'open' agar class bisa diwariskan
-open class Vihicle(Val brand: String) {
+open class Vehicle(val brand: String) {
     var speed: Int = 0
 
     // Method juga bersifat final secara default. Gunakan 'open' agar bisa di-override.
@@ -14,3 +14,12 @@ open class Vihicle(Val brand: String) {
     open fun honk() {
         println("Beep beep!")
     }
+}
+
+// Car "Is-A" Vehicle. Parameter barnd dilempar ke atas melalui Vehicle(brand)
+open class Car(brand: String, val numberOfDoors: Int) : Vehicle(brand) {
+
+    fun openTrunk(){
+        println("Bagasi mobil $brand dengan $numberOfDoors pintu dibuka. ")
+    }
+}
