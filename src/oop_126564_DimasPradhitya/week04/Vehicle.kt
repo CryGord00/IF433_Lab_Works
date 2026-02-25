@@ -14,10 +14,16 @@ open class Vehicle(val brand: String) {
     open fun honk() {
         println("Beep beep!")
     }
+
 }
 
 // Car "Is-A" Vehicle. Parameter barnd dilempar ke atas melalui Vehicle(brand)
 open class Car(brand: String, val numberOfDoors: Int) : Vehicle(brand) {
+
+    override fun accelerate() {
+        super.accelerate() // Memanggil logika penambahan kecepatan milik Parent
+        println("Mobil $brand menggunakan transmisi gigi untuk menambah kecepatan.")
+    }
 
     fun openTrunk() {
         println("Bagasi mobil $brand dengan $numberOfDoors pintu dibuka. ")
