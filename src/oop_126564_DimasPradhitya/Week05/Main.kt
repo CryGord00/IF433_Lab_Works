@@ -42,5 +42,12 @@ fun main() {
     for (metode in listPembayaran) {
         println("\nMemproses transaksi Rp 75.000 menggunakan ${metode.accountName}")
         metode.processPayment(75000.0)
+
+        // Smart Casting Challenge (Instruksi Poin 5)
+        if (metode is EWallet) {
+            println("Mendeteksi EWallet... Melakukan top up otomatis.")
+            metode.topUp(50000.0) // Smart cast otomatis ke EWallet
+            metode.processPayment(75000.0) // Coba bayar lagi
+        }
     }
-}
+    }
