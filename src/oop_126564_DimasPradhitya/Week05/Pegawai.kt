@@ -1,0 +1,6 @@
+package oop_126564_DimasPradhitya.Week05
+
+abstract class Pegawai(val nama: String) {
+    // Abstract function tidak memiliki body (tanpa kurung kurawal)
+    abstract fun bekerja()
+}
