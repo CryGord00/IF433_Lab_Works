@@ -31,4 +31,16 @@ fun main() {
     println("Luas Persegi: ${math.hitungLuas(5)}")
     println("Luas Persegi Panjang: ${math.hitungLuas(5, 10)}")
     println("Luas Lingkaran: ${math.hitungLuas(7.0)}")
+
+    // --- Tugas Mandiri 2: Sistem Pembayaran ---
+    println("\n--- Sistem Pembayaran E-Commerce ---")
+    val dompetKu = EWallet("Dimas", 50000.0)
+    val kartuKu = CreditCard("Dimas", 100000.0)
+
+    val listPembayaran = listOf(dompetKu, kartuKu)
+
+    for (metode in listPembayaran) {
+        println("\nMemproses transaksi Rp 75.000 menggunakan ${metode.accountName}")
+        metode.processPayment(75000.0)
+    }
 }
