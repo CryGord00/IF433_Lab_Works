@@ -1,7 +1,7 @@
 package oop_126564_DimasPradhitya.Week06
 
 // Menggunakan 1 parent class dan 2 Interfaces
-abstract class Smartwatch : Watch(), BluetoothConnectable, Rechargeable {
+class Smartwatch : Watch(), BluetoothConnectable, Rechargeable {
     override fun showTime() {
         println("Layar OLED menyala: 14:00 WIB")
     }
