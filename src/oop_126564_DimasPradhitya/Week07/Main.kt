@@ -1,6 +1,18 @@
 package oop_126564_DimasPradhitya.Week07
 
 fun main() {
+    println("\n=== TEST REGULAR CLASS ===")
+    val reg1 = RegulerUser("Alice", 22)
+    val reg2 = RegulerUser("Alice", 22)
+    println(reg1) // akan mencetak memori hash
+    println("Sama? ${reg1 == reg2}") //False
+
+   println("\n=== TEST DATA CLASS ===")
+    val data1 = DataUser("Alice", 22)
+    val data2 = DataUser("Alice", 22)
+    println(data1) //otomatis readable format
+    println("sama? ${data1 == data2}") //true (structural equality)
+
     println("=== TEST SINGLETON ===")
     println("Status: ${DatabaseManager.connectionStatus}")
     DatabaseManager.connect()
@@ -9,13 +21,13 @@ fun main() {
     val client = NetworkClient.createClient() // Instansiasi lewat Factory
     client.connect()
 
-    println("\n== TEST SEALED CLASS ===")
-    val response = ApiResponse = ApiResponse("Data berhabis ditarik")
+    println("\n=== TEST SEALED CLASS ===")
+    val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
 
     //EROR: 'when' ecperssion must be exhaustive
-    val uiMassage = when (response) {
+    val uiMessage = when(response) {
         is ApiResponse.Success -> "Tampilkan: ${response.data}"
         is ApiResponse.Error -> "Munculkan alert: ${response.message}"
-        is ApiResponse.Loading -> "Tampilkan Spinnner"
+        is ApiResponse.Loading -> "Tampilkan Spinner"
     }
 }
