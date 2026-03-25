@@ -1,4 +1,10 @@
 package oop_126564_DimasPradhitya.Week07
 
-class DatabaseManager {
+object DatabaseManager {
+    var connectionStatus: String = "Disconnected"
+
+    fun connect() {
+        connectionStatus = "Connected to Server"
+        println("Database is ready")
+    }
 }
