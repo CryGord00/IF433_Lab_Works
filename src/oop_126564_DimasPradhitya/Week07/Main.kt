@@ -1,0 +1,53 @@
+package oop_126564_DimasPradhitya.Week07
+
+fun main() {
+    println("\n=== TEST REGULAR CLASS ===")
+    val reg1 = RegulerUser("Alice", 22)
+    val reg2 = RegulerUser("Alice", 22)
+    println(reg1) // akan mencetak memori hash
+    println("Sama? ${reg1 == reg2}") //False
+
+   println("\n=== TEST DATA CLASS ===")
+    val data1 = DataUser("Alice", 22)
+    val data2 = DataUser("Alice", 22)
+    println(data1) //otomatis readable format
+    println("sama? ${data1 == data2}") //true (structural equality)
+
+    val data3 = data1.copy(age = 23)
+    println("Hasil Copy: $data3")
+
+    val (userName, userAge) = data1
+    println("Destructured: $userName berumur $userAge")
+
+    println("=== TEST SINGLETON ===")
+    println("Status: ${DatabaseManager.connectionStatus}")
+    DatabaseManager.connect()
+
+    println("\n== TEST COMPANION OBJECT ===")
+    val client = NetworkClient.createClient() // Instansiasi lewat Factory
+    client.connect()
+
+    println("\n=== TEST SEALED CLASS ===")
+    val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
+
+    //EROR: 'when' ecperssion must be exhaustive
+    val uiMessage = when(response) {
+        is ApiResponse.Success -> "Tampilkan: ${response.data}"
+        is ApiResponse.Error -> "Munculkan alert: ${response.message()}"
+        is ApiResponse.Loading -> "Tampilkan Spinner"
+    }
+    println("\n=== RPG ENGINE SIMULATION ===")
+    GameManager.startGame()
+    GameManager.startGame()
+
+    println("Drop chance Legendary: ${ItemRarity.LEGENDARY.dropChance}%")
+    val weaponPemain = Weapon.forgeStarterSword()
+    println("Senjata Awal: ${weaponPemain.item.name}, Damage: ${weaponPemain.item.damage}, Durability: ${weaponPemain.durability}")
+
+    println("\n--- Menuju Blacksmith untuk Upgrade ---")
+    val upgradedItem = weaponPemain.item.copy(name = "Pedang Kayu Legend", damage = 25)
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.LootDropped(upgradedItem))
+    processEvent(BattleState.GameOver("Terkena jebakan racun"))
+}
