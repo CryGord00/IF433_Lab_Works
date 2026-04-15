@@ -59,4 +59,10 @@ println("Hasil cast + fallback: $safeString")
     } catch (e: IllegalArgumentException) {
         println(e.message)  // Mencetak pesan custom kita, bukan crash buta
     }
+
+    println("\n=== TEST JAVA INTEROP ===")
+    val javaResponse = LegacyJavaAPI.fetchServerStatus()
+    // Kita menenkan tombol !! karena KITA TAHU implementasi java-nya aman
+    val statusLength = javaResponse!!.length
+    println("Status dari Java: $javaResponse (Length: $statusLength)")
 }
