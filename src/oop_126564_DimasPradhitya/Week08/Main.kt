@@ -41,4 +41,13 @@ val someObject: Any = 100 // Tipe aslinya Integer
 val safeString = someObject as? String ?: "Unknown String"
 println("Hasil cast + fallback: $safeString")
 
+    println("\n=== TEST THE RED BUTTON (!!) ===")
+    val toxicData: String? = null
+    try {
+        //DENGAROUS: MEmaksa compiler percaya data ini tidak null
+        val length = toxicData!!.length
+    }catch (e: NullPointerException) {
+        println("CRASH (NPE)! jangan gunakan !! secara sembarangan.")
+    }
+
 }
