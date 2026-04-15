@@ -2,7 +2,7 @@ package oop_126564_DimasPradhitya.Week08
 
 class ApiParser {
     fun parseProduct(rawJson: Map<String, Any?>): Product? {
-        // Ekstrak id dan name dengan requireNotNull (Langkah 2)
+        // Ekstrak id dan name dengan requireNotNull
         val id = requireNotNull(rawJson["id"] as? String) { "API Invalid: Missing ID" }
         val name = requireNotNull(rawJson["name"] as? String) { "API Invalid: Missing Name" }
 
@@ -22,4 +22,17 @@ class ApiParser {
             else -> null // Unknown type
         }
     }
+
+    fun checkout(product: Product) {
+        // Ekstrak ID menggunakan when (Sealed Class)
+        val id = when (product) {
+            is Electronic -> product.id
+            is Clothing -> product.id
+        }
+
+        // Gunakan !! untuk membuktikan Java Interop
+        val transactionId = JavaPaymentService.processPayment(id)!!
+        println("Checkout Berhasil! Transaction ID: $transactionId")
+    }
+}
 }
