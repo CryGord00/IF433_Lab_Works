@@ -5,10 +5,12 @@ enum class AppState {
 
 }
 sealed class ApiResponse {
-    data class Success(val data:String) : ApiResponse()
-    data class Error(val error:String) : ApiResponse() {
-        fun message(): String {}
+    data class Success(val data: String) : ApiResponse()
+    data class Error(val error: String) : ApiResponse() {
+        fun message(): String {
+            return TODO("Provide the return value")
+        }
     }
 
     object Loading : ApiResponse()
-    }
+}
