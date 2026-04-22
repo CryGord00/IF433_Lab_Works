@@ -29,4 +29,7 @@ fun main() {
 
     val uniquePairs = tradeHistory.map { it.pair }.toSet()
 
+    println("\n[ Top Performers ]")
+    topPerformersString.forEach { println(it) }
+
 }
