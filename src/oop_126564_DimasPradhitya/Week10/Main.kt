@@ -21,6 +21,16 @@ fun main(processData: (String) -> Unit, getMax: (Int, Int) -> Unit) {
     val math = MathBox(10.5, 20)
     println("Total: ${math.sum()}")
     println("Terbesar: ${getMax(45, 90)}")
+
+    println("\n=== RIWAYAT TRANSAKSI ===")
+    val txRepo = WalletRepository<Transaction>()
+    txRepo.add(Transaction("TX001", 0.1))
+    txRepo.add(Transaction("TX002", 50.0))
+
+    txRepo.getAll().forEach { tx ->
+        println("ID Transaksi: ${tx.id} | Jumlah: ${tx.amount}")
+    }
 }
+
 
 
