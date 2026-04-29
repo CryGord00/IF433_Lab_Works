@@ -1,6 +1,6 @@
 package oop_126564_DimasPradhitya.Week10
 
-fun main(processData: (String) -> Unit) {
+fun main(processData: (String) -> Unit, getMax: (Int, Int) -> Unit) {
     println("=== TEST GENERIC CLASS ===")
     val intBox = Box(100)
     val stringBox = Box("Generics in Kotlin");
@@ -16,6 +16,11 @@ fun main(processData: (String) -> Unit) {
     printData(3.14)
     val result = processData("Stable Coin")
     println("Hasil Proses: $result")
+
+    println("\n==== TEST CONSTRAINTS ====")
+    val math = MathBox(10.5, 20)
+    println("Total: ${math.sum()}")
+    println("Terbesar: ${getMax(45, 90)}")
 }
 
 
