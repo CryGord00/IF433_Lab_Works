@@ -8,4 +8,8 @@ class WalletRepository<T> {
 
     // Pencarian sederhana (Tugas 4)
     fun find(predicate: (T) -> Boolean): T? = items.find(predicate)
+
+    fun findItem(predicate: (T) -> Boolean): T? {
+        return items.find(predicate)
+    }
 }
