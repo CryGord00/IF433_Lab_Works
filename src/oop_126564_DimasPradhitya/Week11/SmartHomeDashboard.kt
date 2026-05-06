@@ -29,4 +29,9 @@ fun main() {
         println(it.diagnose())
     }
 
+    with(homeDevices) {
+        println("\n=== DASHBOARD SUMMARY ===")
+        println("Jumlah Perangkat: ${this.size}")
+    }
+
 }
