@@ -14,5 +14,13 @@ fun main() {
     val recovered = result.recover { 0 }.getOrNull()
     println("Recover Value: $recovered")
 
+    println("\n=== TEST CHAINING ===")
+    runCatching {
+        "100".toInt()
+    }.onSuccess { v ->
+        println("Berhasil dikonversi: $v")
+    }.onFailure { e ->
+        println("Gagal konversi: ${e.message}")
+    }
 }
 
