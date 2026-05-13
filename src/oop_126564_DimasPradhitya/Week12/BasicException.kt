@@ -18,7 +18,7 @@ fun main() {
 
     //try langsung mengembalikan hasil parsing, atau -1 jika gagal
     val result: Int = try {
-        Integer.parser(inputString)
+        Integer.parseInt(inputString)
     } catch (e: NumberFormatException) {
         -1
     }

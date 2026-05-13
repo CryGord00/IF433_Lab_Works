@@ -1,6 +1,5 @@
 package oop_126564_DimasPradhitya.Week12
 
-import sun.security.krb5.KrbException.errorMessage
 
 fun main() {
     println("==== TEST RUNCAATCHING ===")
@@ -47,10 +46,17 @@ fun main() {
         dispenseKibble(30, currentKibbleStock, false)
     }.onSuccess { newStock -> }
 
-    println(message = "Peringatan ke Pemilik: ${errorMessage(currentKibbleStock)}")
-    println("(Bonus: Berikan chicken jerky secara manual)")
-}
 
+    runCatching {
+        dispenseKibble(30, currentKibbleStock, false)
+    }.onSuccess { newStock ->
+        currentKibbleStock = newStock
+        println("Makan sore sukses! Sisa stok kibble: $currentKibbleStock gr")
+    }.onFailure { err ->
+        println("Peringatan ke Pemilik: ${err.message}")
+        println("(Opsional: Berikan chicken jerky secara manual)")
+    }
+}
 
 
 
