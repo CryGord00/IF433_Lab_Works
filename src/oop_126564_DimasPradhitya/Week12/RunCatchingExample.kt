@@ -22,5 +22,18 @@ fun main() {
     }.onFailure { e ->
         println("Gagal konversi: ${e.message}")
     }
+
+    var currentKibbleStock = 50
+    println("\n=== JADWAL MAKAN PAGI ===")
+    try {
+        currentKibbleStock = dispenseKibble(80, currentKibbleStock, false)
+    } catch (e: DispenserJamException) {
+        println("Peringatan Mekanik: ${e.message}")
+    } catch (e: FoodEmptyException) {
+        println("Peringatan Stok: ${e.message}")
+    } catch (e: Exception) {
+        println("Kesalahan tidak terduga: ${e.message}")
+    }
 }
+
 
