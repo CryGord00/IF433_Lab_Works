@@ -36,6 +36,12 @@ fun main() {
     }
 
     println("Siklus pengecekan dispenser pagi selesai.")
+
+
+    println("\n=== JADWAL MAKAN SORE ===")
+    currentKibbleStock = 1000
+
+
 }
 
 
