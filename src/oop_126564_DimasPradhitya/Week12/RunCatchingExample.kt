@@ -1,5 +1,7 @@
 package oop_126564_DimasPradhitya.Week12
 
+import sun.security.krb5.KrbException.errorMessage
+
 fun main() {
     println("==== TEST RUNCAATCHING ===")
     val result: Result<Int> = runCatching {
@@ -44,7 +46,11 @@ fun main() {
     runCatching {
         dispenseKibble(30, currentKibbleStock, false)
     }.onSuccess { newStock -> }
+
+    println(message = "Peringatan ke Pemilik: ${errorMessage(currentKibbleStock)}")
+    println("(Bonus: Berikan chicken jerky secara manual)")
 }
+
 
 
 
