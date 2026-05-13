@@ -5,4 +5,14 @@ fun main() {
     val result: Result<Int> = runCatching {
         "42X".toInt()
     }
+
+    //Pattern: getOrElse
+    val safeValue = result.getOrElse { -1 }
+    println("safe Value (getOrElse $safeValue)")
+
+    // Pattern: Recover (Bisa mengubah tipe kegagalan jadi sukses
+    val recovered = result.recover { 0 }.getOrNull()
+    println("Recover Value: $recovered")
+
 }
+
