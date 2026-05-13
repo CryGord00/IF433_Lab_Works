@@ -41,7 +41,9 @@ fun main() {
     println("\n=== JADWAL MAKAN SORE ===")
     currentKibbleStock = 1000
 
-
+    runCatching {
+        dispenseKibble(30, currentKibbleStock, false)
+    }.onSuccess { newStock -> }
 }
 
 
